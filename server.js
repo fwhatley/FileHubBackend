@@ -1,8 +1,12 @@
 var express = require("express");
 var multer = require("multer");
 var app = express();
+
 var swaggerUi = require('swagger-ui-express'); // swagger tutorial: https://blog.cloudboost.io/adding-swagger-to-existing-node-js-project-92a6624b855b, https://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-1-introduction/
-var swaggerDocument = require('./swagger.json');; // swagger editor: http://editor.swagger.io/
+var swaggerDocument = require('./swagger.json'); // swagger editor: http://editor.swagger.io/
+
+var config = require('config');
+const APIEndpoint = config.get('APIEndpoint'); // dev vs prod vars: https://github.com/lorenwest/node-config
 
 // Set up endpoints
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
@@ -24,14 +28,12 @@ app.get("/health", function(req, res){
 });
 
 app.get("/*", function(req, res){
-    res.send({message: 'You are at the root of the server. See swagger docs: http://localhost:3000/api-docs'});
+    res.send({message: `You are at the root of the server. See swagger docs: ${APIEndpoint}/api-docs`});
 });
 
 // Serve app
 const port = 3000;
 var server = app.listen(process.env.PORT || port, function () {
+    console.log(`APIEndpoint: ${APIEndpoint}`)
     console.log("Listening on port %s...", server.address().port);
 })
-
-
-
