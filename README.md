@@ -6,7 +6,7 @@ This the backend portion of [FileHubFronEnd](https://github.com/fwhatley/FileHub
 
 Run `npm install`
 
-Run `npm start` to run server at `http://localhost:3000/`
+Run `npm run serve` for a dev server. Navigate to `http://localhost:3000/api-docs`. The app will automatically reload if you change any of the source files.
 
 ## Debug
 
