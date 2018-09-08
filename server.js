@@ -29,7 +29,7 @@ app.get("/*", function(req, res){
 
 // Serve app
 const port = 3000;
-var server = app.listen(port, function() {
+var server = app.listen(process.env.PORT || port, function () {
     console.log("Listening on port %s...", server.address().port);
 })
 
