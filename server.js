@@ -23,7 +23,7 @@ app.get("/health", function(req, res){
     res.send({message: 'Service is healthy and available'}); // return 200 OK http://expressjs.com/en/4x/api.html#res.end
 });
 
-app.get("/", function(req, res){
+app.get("/*", function(req, res){
     res.send({message: 'You are at the root of the server. See swagger docs: http://localhost:3000/api-docs'});
 });
 
