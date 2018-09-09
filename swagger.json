@@ -5,6 +5,7 @@
     "title": "File Hub API"
   },
   "host": "localhost:3000",
+  "basePath": "/api",
   "schemes": [
     "http"
   ],
