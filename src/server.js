@@ -20,8 +20,6 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
-
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router(); // get an instance of the express Router
@@ -65,5 +63,6 @@ app.use('/api', router);
 var port = process.env.PORT || 3000;        // set our port
 var server = app.listen(port, function () {
     console.log(`APIEndpoint: ${APIEndpoint}`)
+    console.log(`Swagger page: ${APIEndpoint}/api-docs`)
     console.log("Listening on port %s...", server.address().port);
 })
