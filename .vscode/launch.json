@@ -8,8 +8,15 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Launch Server",
             "program": "${workspaceFolder}\\server.js"
+        },
+        
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Util",
+            "program": "${workspaceFolder}\\utils\\reload-db.js"
         }
     ]
 }
