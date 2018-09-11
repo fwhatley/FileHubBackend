@@ -13,4 +13,5 @@ Run `npm run serve` for a dev server. Navigate to `http://localhost:3000/api-doc
 Press F5 in VScode to lunch server in debug mode
 
 Notes
-- use `set NODE_ENV=production`, `set NODE_ENV=development` to change urls
+- set `set NODE_ENV=production`, `set NODE_ENV=development` to change urls
+- set `Set FILE_HUB_CONNECTION_STRING=`
